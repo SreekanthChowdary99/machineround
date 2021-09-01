@@ -39,13 +39,6 @@ class Schedule(models.Model):
     name = models.CharField(max_length=60,default=None)
     user=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
 
-    # def __str__(self):
-    #     return '{} {} {}. user: {}'.format(self.date, self.time, self.name)
-
-    # @property
-    # def time(self):
-    #     return self.TIMESLOT_LIST[self.timeslot][1]
-
 class OutCsv(models.Model):
     code=models.IntegerField()
     symbole=models.CharField(max_length = 10)
