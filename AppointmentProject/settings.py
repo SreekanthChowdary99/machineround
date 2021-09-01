@@ -83,6 +83,7 @@ WSGI_APPLICATION = 'AppointmentProject.wsgi.application'
 #     }
 # }
 
+# using mysql database in the backend
 DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
