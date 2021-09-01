@@ -2,14 +2,10 @@
 <html>
 
 <head>
-  <title>Login</title>
+  <title>Home</title>
   <br>
   <br>
   <br>
-  <center>
-    <a href="{% url 'signup' %}" class="btn btn-primary">Sign Up</a>
-    <a href="{% url 'login' %}" class="btn btn-info">Login</a>
-  </center>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -22,7 +18,7 @@
     html {
       margin: 0;
       padding: 0;
-      height: 100%;
+      height: 80%;
     }
 
     .user_card {
@@ -77,33 +73,27 @@
       box-shadow: none !important;
       outline: 0px !important;
     }
-
-    #messages {
-      background-color: grey;
-      color: #fff;
-      padding: 10px;
-      margin-top: 10px;
-    }
   </style>
 
 </head>
 
-<h3> Your Current Schedules </h3>
 <br>
-{% for schedule in schedules %}
-<div class="row input-group mb-2">
-  <div>{{ schedule.date }}</div>
-  <div>{{ schedule.name }}</div>
-  <div>{{ schedule.timeslot }}</div>
-</div>
-{% endfor %}
+<center>
+  <h3> Your Current Schedules </h3>
+  <br>
+  {% for schedule in schedules %}
+  {{ schedule.date }} &emsp;
+  {{ schedule.name }} &emsp;
+  {{ schedule.timeslot }}
+  <br>
+  {% endfor %}
+</center>
 
 <body>
   <div class="container h-100">
     <div class="d-flex justify-content-center h-100">
       <div class="user_card">
         <div class="d-flex justify-content-center">
-          <h3 id="form-title">LOGIN</h3>
         </div>
         <div class="d-flex justify-content-center form_container">
           <form method="POST" action="">
@@ -114,17 +104,16 @@
               <div class="col-sm-4 required">{{form.date.errors}}</div>
             </div>
             <div class="row input-group mb-2">
-                <div class="col-sm-3 col-sm-offset-2 fas">{{ form.timeslot.label}}<span class="required"></span></div>
-                <div class="col-sm-3" class="semyear">{{ form.timeslot }}</div>
-                <div class="col-sm-4 required">{{form.timeslot.errors}}</div>
-              </div>
-              <div class="row input-group mb-2">
-                <div class="col-sm-3 col-sm-offset-2 fas">{{ form.name.label}}<span class="required"></span></div>
-                <div class="col-sm-3" class="semyear">{{ form.name }}</div>
-                <div class="col-sm-4 required">{{form.name.errors}}</div>
-              </div>
+              <div class="col-sm-3 col-sm-offset-2 fas">{{ form.timeslot.label}}<span class="required"></span></div>
+              <div class="col-sm-3" class="semyear">{{ form.timeslot }}</div>
+              <div class="col-sm-4 required">{{form.timeslot.errors}}</div>
+            </div>
+            <div class="row input-group mb-2">
+              <div class="col-sm-3 col-sm-offset-2 fas">{{ form.name.label}}<span class="required"></span></div>
+              <div class="col-sm-3" class="semyear">{{ form.name }}</div>
+              <div class="col-sm-4 required">{{form.name.errors}}</div>
+            </div>
             <div class="d-flex justify-content-center mt-3 login_container">
-              <!-- <input class="btn login_btn" type="submit" value="Login"> -->
               <button type="submit" class="btn btn-primary">Save</button>
             </div>
           </form>
