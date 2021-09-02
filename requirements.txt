@@ -4,7 +4,6 @@ Django==3.2.6
 django-datetime-widget==0.9.3
 django-datetime-widget2==0.9.5
 django-filter==2.4.0
-django-heroku==0.3.1
 django-utils-six==2.0
 djangorestframework==3.12.4
 djangorestframework-simplejwt==4.4.0
